@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* ── Base font ─────────────────────────────────────── */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Remove rounded corners site-wide ─────────────── */
+/* Aerospace aesthetic = sharp, precise, not bubbly    */
+/* Individual components override where needed         */
+
+/* ── Smooth scroll ────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection colour ─────────────────────────────── */
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #fff;
+}
+
+/* ── Scrollbar (webkit) ───────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
