@@ -14,10 +14,35 @@ export default function Hero() {
 
       {/* ── Background ── */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
 
+        {/* Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark overlay — keeps text readable */}
+        <div className="absolute inset-0 bg-slate-950/10" />
+
+        {/* Watermark remover — solid-to-transparent gradient patch over bottom-right */}
+        {/* Increase width/height below if your watermark is bigger */}
+        <div
+          className="absolute bottom-0 right-0 pointer-events-none z-10"
+          style={{
+            width: "280px",
+            height: "90px",
+            background: "linear-gradient(to top left, #020617 35%, transparent 100%)",
+          }}
+        />
+
+        {/* Subtle grid */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.07]"
+          className="absolute inset-0 w-full h-full opacity-[0.04]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
@@ -28,17 +53,19 @@ export default function Hero() {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
 
+        {/* Scan-line shimmer */}
         <motion.div
           animate={{ x: ["0%", "100%"] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-transparent via-blue-400/30 to-transparent"
+          transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+          className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-transparent via-blue-400/20 to-transparent"
         />
 
+        {/* Bottom glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 rounded-full blur-[120px]" />
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-40 pb-24">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-40 pb-38">
 
         {/* Eyebrow */}
         <motion.div
@@ -72,7 +99,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-8 text-gray-400 text-lg lg:text-xl max-w-2xl leading-relaxed"
+          className="mt-8 text-gray-300 text-lg lg:text-xl max-w-2xl leading-relaxed"
         >
           SHARK'D develops autonomous drone swarms capable of
           collaborative decision-making, adaptive mission planning and
@@ -92,7 +119,7 @@ export default function Hero() {
             </button>
           </Link>
           <Link to="/technology">
-            <button className="border border-slate-600 hover:border-blue-400 text-white hover:text-blue-400 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest transition-colors duration-200">
+            <button className="border border-slate-500 hover:border-blue-400 text-white hover:text-blue-400 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest transition-colors duration-200 backdrop-blur-sm">
               Our Technology
             </button>
           </Link>
@@ -103,7 +130,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="mt-16 flex items-center gap-2 text-slate-600 text-xs uppercase tracking-widest"
+          className="mt-16 flex items-center gap-2 text-slate-500 text-xs uppercase tracking-widest"
         >
           <motion.span
             animate={{ y: [0, 6, 0] }}
@@ -120,11 +147,11 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="relative z-10 w-full border-t border-slate-800 bg-slate-950/80 backdrop-blur-sm"
+        className="relative z-10 w-full border-t border-slate-800 bg-slate-950/95 backdrop-blur-sm"
       >
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
           {STATS.map((s) => (
-            <div key={s.label} className="py-6 px-4 sm:px-8 first:pl-0 last:pr-0">
+            <div key={s.label} className="py-12 px-4 sm:px-8 first:pl-0 last:pr-0">
               <p className="text-2xl font-black text-white">{s.value}</p>
               <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">{s.label}</p>
             </div>
