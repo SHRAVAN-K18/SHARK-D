@@ -51,7 +51,7 @@ const PRODUCTS = [
     tagline: "Adaptive AI decision-making for autonomous operations",
     description:
       "The MI Engine runs onboard each drone and enables decentralised reasoning. It processes sensor fusion data, reallocates tasks when nodes drop out, and maintains mission continuity without requiring a live uplink.",
-    image:"/product-recon.jpg",
+    image:"/product-intelligence.jpg",
       specs: [
       { label: "Inference", value: "Onboard edge AI" },
       { label: "Sensor Fusion", value: "Camera / LiDAR / IMU" },

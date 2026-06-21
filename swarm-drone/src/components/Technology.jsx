@@ -4,6 +4,7 @@ import { useState } from "react";
 const LAYERS = [
   {
     id: "01",
+    image:"/tech-mesh.jpg",
     tag: "Coordination Layer",
     title: "Swarm Communication",
     body: "Every drone broadcasts and receives positional data, mission objectives, and health telemetry across an encrypted mesh network. The swarm is self-healing — if a node drops, the remaining units re-elect a lead and redistribute tasks within milliseconds.",
@@ -12,6 +13,7 @@ const LAYERS = [
   },
   {
     id: "02",
+    image:"/tech-adaptive.png",
     tag: "Intelligence Layer",
     title: "Adaptive Decision Engine",
     body: "Each drone runs a lightweight onboard AI model that interprets sensor fusion data and executes real-time replanning. No uplink required. The engine prioritises mission continuity — if the ground station goes dark, the swarm adapts and carries out its last known objective.",
@@ -20,6 +22,7 @@ const LAYERS = [
   },
   {
     id: "03",
+    image:"/tech-mission.jpg",
     tag: "Mission Layer",
     title: "Autonomous Mission Planning",
     body: "Operators define a mission objective — area surveillance, perimeter patrol, target tracking — and the SCS automatically distributes roles across the swarm. Drones deconflict flight paths, share detected anomalies, and maintain formation geometry in dynamic wind conditions.",
@@ -98,13 +101,20 @@ export default function Technology() {
                 }`}
               >
                 {/* Image cell */}
-                <div className="relative bg-slate-800 border border-slate-700 h-[320px] flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900" />
-                  <span className="relative text-slate-600 text-sm font-mono">{layer.imgPlaceholder}</span>
-                  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
-                  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-700" />
-                  <span className="absolute top-4 right-4 text-slate-700 text-xs font-mono">{layer.id}</span>
-                </div>
+<div className="relative bg-slate-800 border border-slate-700 h-[400px] overflow-hidden">
+  <img
+    src={layer.image}
+    alt={layer.title}
+    className="w-full h-full object-cover"
+  />
+
+  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-300" />
+  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-300" />
+
+  <span className="absolute top-4 right-4 text-white text-xs font-mono">
+    {layer.id}
+  </span>
+</div>
 
                 {/* Text cell */}
                 <div>

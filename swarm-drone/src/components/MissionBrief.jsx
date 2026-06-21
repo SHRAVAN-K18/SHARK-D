@@ -65,8 +65,7 @@ export default function MissionBrief() {
               <h3 className="text-white font-bold text-xl mt-4">{uc.title}</h3>
               <p className="text-slate-400 text-sm mt-3 leading-relaxed">{uc.body}</p>
               <div className="mt-6 flex items-center gap-2 text-blue-400 text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                <span>Learn more</span>
-                <span>→</span>
+
               </div>
             </motion.div>
           ))}

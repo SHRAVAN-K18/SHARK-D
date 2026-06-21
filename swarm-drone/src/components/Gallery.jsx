@@ -77,23 +77,7 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Wide team / workshop photo placeholder */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-3 relative bg-slate-900 border border-slate-800 h-[220px] overflow-hidden group cursor-pointer"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 group-hover:from-slate-800 transition-colors duration-300" />
-          <span className="absolute inset-0 flex items-center justify-center text-slate-700 text-sm font-mono">
-            Team / workshop photo · wide
-          </span>
-          <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
-            <p className="text-white text-sm font-semibold">The Team</p>
-            <p className="text-slate-400 text-xs mt-0.5">Building the future of autonomous flight · Bengaluru, India</p>
-          </div>
-        </motion.div>
+
 
       </div>
     </section>
