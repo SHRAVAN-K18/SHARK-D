@@ -1,52 +1,5 @@
 import { motion } from "framer-motion";
 
-/*
-  IMAGE SPECS FOR GALLERY
-  ─────────────────────────────────────────────────────
-  All gallery images should be:
-    Format     : JPEG optimised (< 300 KB each)
-    Aspect     : See individual cell sizes below
-    Style      : Dark backgrounds preferred; dramatic
-                 lighting; aerospace/engineering aesthetic
-
-  Cell 1 (large, spans 2 rows) — CAD / 3D render
-    File       : /public/gallery/cad-render.jpg
-    Size       : 900 × 900 px (rendered square, displayed tall)
-    Content    : Full-detail drone CAD render, exploded-view
-                 or clean 3-quarter perspective
-
-  Cell 2 — Swarm simulation screenshot
-    File       : /public/gallery/swarm-sim.jpg
-    Size       : 900 × 500 px
-    Content    : Top-down simulation view, multiple drone
-                 dots forming geometric pattern over terrain
-
-  Cell 3 — Flight test footage still
-    File       : /public/gallery/flight-test.jpg
-    Size       : 900 × 500 px
-    Content    : Real or rendered drone in flight,
-                 motion-blurred rotors, blue sky or dusk bg
-
-  Cell 4 — Mission planning UI
-    File       : /public/gallery/mission-plan.jpg
-    Size       : 900 × 500 px
-    Content    : Ground control station monitor showing
-                 map, telemetry, and waypoints
-
-  Cell 5 — Ground station exterior
-    File       : /public/gallery/ground-station.jpg
-    Size       : 900 × 500 px
-    Content    : Portable command unit / laptop setup
-                 in field environment
-
-  Cell 6 (wide) — Team / workshop photo
-    File       : /public/gallery/team.jpg
-    Size       : 1800 × 700 px
-    Content    : Team working on drone hardware, or
-                 lab/workshop environment with drones
-  ─────────────────────────────────────────────────────
-*/
-
 const ITEMS = [
   { label: "Airframe Design", sub: "CAD Render · Rev 3", large: true },
   { label: "Swarm Simulation", sub: "Formation flight · 24 nodes" },
@@ -57,8 +10,8 @@ const ITEMS = [
 
 export default function Gallery() {
   return (
-    <section className="bg-slate-950 py-32 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-950 py-32 border-t border-slate-800 w-full">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Header */}
         <motion.div

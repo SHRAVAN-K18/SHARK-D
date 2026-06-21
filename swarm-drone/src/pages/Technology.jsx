@@ -75,31 +75,33 @@ export default function TechnologyPage() {
 
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white">
+      <div className="min-h-screen bg-slate-950 text-white w-full">
 
         {/* Page header */}
-        <div className="pt-40 pb-20 border-b border-slate-800 max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-blue-400 text-xs uppercase tracking-[6px] mb-5">Technology</p>
-            <h1 className="text-5xl lg:text-6xl font-black max-w-3xl leading-tight">
-              Three Layers.<br />
-              <span className="text-blue-400">One Unified System.</span>
-            </h1>
-            <p className="text-slate-400 text-lg mt-5 max-w-2xl leading-relaxed">
-              SHARK'D's architecture separates the swarm into communication,
-              intelligence, and mission layers — each engineered for resilience
-              and designed to interoperate seamlessly.
-            </p>
-          </motion.div>
+        <div className="pt-40 pb-20 border-b border-slate-800 w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-blue-400 text-xs uppercase tracking-[6px] mb-5">Technology</p>
+              <h1 className="text-5xl lg:text-6xl font-black max-w-3xl leading-tight">
+                Three Layers.<br />
+                <span className="text-blue-400">One Unified System.</span>
+              </h1>
+              <p className="text-slate-400 text-lg mt-5 max-w-2xl leading-relaxed">
+                SHARK'D's architecture separates the swarm into communication,
+                intelligence, and mission layers — each engineered for resilience
+                and designed to interoperate seamlessly.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
         {/* Architecture summary strip */}
-        <div className="border-b border-slate-800">
-          <div className="max-w-7xl mx-auto px-6">
+        <div className="border-b border-slate-800 w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid grid-cols-3">
               {LAYERS.map((l, i) => (
                 <a
@@ -119,7 +121,7 @@ export default function TechnologyPage() {
         </div>
 
         {/* Layer deep-dives */}
-        <div className="max-w-7xl mx-auto px-6 py-20 space-y-32">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20 space-y-32">
           {LAYERS.map((layer, i) => {
             const imgLeft = i % 2 === 0;
             return (
@@ -169,8 +171,8 @@ export default function TechnologyPage() {
         </div>
 
         {/* System Architecture block */}
-        <div className="border-t border-slate-800 bg-slate-900">
-          <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="border-t border-slate-800 bg-slate-900 w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
             <p className="text-blue-400 text-xs uppercase tracking-[5px] mb-4">System Architecture</p>
             <h2 className="text-3xl font-black mb-12">Layer Stack</h2>
             <div className="space-y-2">
@@ -192,7 +194,7 @@ export default function TechnologyPage() {
         </div>
 
         {/* FAQ */}
-        <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <p className="text-blue-400 text-xs uppercase tracking-[5px] mb-4">FAQ</p>
           <h2 className="text-3xl font-black mb-10">Technical Questions</h2>
           <div className="divide-y divide-slate-800 border-t border-b border-slate-800">
@@ -214,8 +216,8 @@ export default function TechnologyPage() {
         </div>
 
         {/* CTA */}
-        <div className="border-t border-slate-800 bg-slate-900">
-          <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-slate-800 bg-slate-900 w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <h2 className="text-2xl font-black text-white">Ready to see it in action?</h2>
               <p className="text-slate-400 text-sm mt-1">Talk to us about a pilot programme or technical demonstration.</p>

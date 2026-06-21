@@ -89,28 +89,30 @@ const PRODUCTS = [
 export default function ProductsPage() {
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white">
+      <div className="min-h-screen bg-slate-950 text-white w-full">
 
         {/* Page header */}
-        <div className="pt-40 pb-20 border-b border-slate-800 max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-blue-400 text-xs uppercase tracking-[6px] mb-5">Products</p>
-            <h1 className="text-5xl lg:text-6xl font-black max-w-3xl leading-tight">
-              The SHARK'D Platform
-            </h1>
-            <p className="text-slate-400 text-lg mt-5 max-w-2xl leading-relaxed">
-              A complete autonomous aerial system — airframe, command software,
-              and embedded intelligence — designed to work as one.
-            </p>
-          </motion.div>
+        <div className="pt-40 pb-20 border-b border-slate-800 w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-blue-400 text-xs uppercase tracking-[6px] mb-5">Products</p>
+              <h1 className="text-5xl lg:text-6xl font-black max-w-3xl leading-tight">
+                The SHARK'D Platform
+              </h1>
+              <p className="text-slate-400 text-lg mt-5 max-w-2xl leading-relaxed">
+                A complete autonomous aerial system — airframe, command software,
+                and embedded intelligence — designed to work as one.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-20 space-y-28">
-          {PRODUCTS.map((p, i) => (
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20 space-y-28">
+          {PRODUCTS.map((p) => (
             <motion.div
               key={p.id}
               initial={{ opacity: 0, y: 32 }}
@@ -130,7 +132,6 @@ export default function ProductsPage() {
               <div className="grid lg:grid-cols-2 gap-14 items-start">
                 {/* Left: image + description */}
                 <div>
-                  {/* Image placeholder */}
                   <div className="relative bg-slate-900 border border-slate-800 h-[360px] flex items-center justify-center mb-8 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800" />
                     <span className="relative text-slate-600 text-sm font-mono text-center px-6">{p.imgPlaceholder}</span>
@@ -183,8 +184,8 @@ export default function ProductsPage() {
         </div>
 
         {/* CTA banner */}
-        <div className="border-t border-slate-800 bg-slate-900">
-          <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div className="border-t border-slate-800 bg-slate-900 w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-3xl font-black text-white">
                 Need a mission-specific build?

@@ -1,20 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-/* ─────────────────────────────────────────────
-   Animated tactical-grid SVG background
-   Replace the <video> tag's src once footage is available.
-   Asset spec:
-     Format : MP4 (H.264) + WebM fallback
-     Dimensions : 1920 × 1080 minimum, 16:9
-     Duration : 10–20 s looping, no audio
-     Content : Low-altitude drone swarm footage or
-               photorealistic CGI render flying over
-               terrain at dusk/night
-     Placement : Full-bleed behind hero, object-fit:cover
-     Dark overlay : bg-black/60 so text stays legible
-───────────────────────────────────────────── */
-
 const STATS = [
   { value: "40 km", label: "Operational Range" },
   { value: "100+", label: "Drones Per Swarm" },
@@ -24,14 +10,12 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-slate-950">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-slate-950 w-full">
 
-      {/* ── Tactical grid background (replace with <video> when asset is ready) ── */}
+      {/* ── Background ── */}
       <div className="absolute inset-0 z-0">
-        {/* Placeholder: swap this div for a <video> element */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
 
-        {/* Animated SVG grid overlay */}
         <svg
           className="absolute inset-0 w-full h-full opacity-[0.07]"
           xmlns="http://www.w3.org/2000/svg"
@@ -44,19 +28,17 @@ export default function Hero() {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
 
-        {/* Animated sweep line — suggests active radar/scan */}
         <motion.div
           animate={{ x: ["0%", "100%"] }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
           className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-transparent via-blue-400/30 to-transparent"
         />
 
-        {/* Blue glow — bottom-center horizon light */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 rounded-full blur-[120px]" />
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-40 pb-24 w-full">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-40 pb-24">
 
         {/* Eyebrow */}
         <motion.div
@@ -138,11 +120,11 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="relative z-10 border-t border-slate-800 bg-slate-950/80 backdrop-blur-sm"
+        className="relative z-10 w-full border-t border-slate-800 bg-slate-950/80 backdrop-blur-sm"
       >
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
           {STATS.map((s) => (
-            <div key={s.label} className="py-6 px-8 first:pl-0 last:pr-0">
+            <div key={s.label} className="py-6 px-4 sm:px-8 first:pl-0 last:pr-0">
               <p className="text-2xl font-black text-white">{s.value}</p>
               <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">{s.label}</p>
             </div>

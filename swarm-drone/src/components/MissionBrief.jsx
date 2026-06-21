@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
 
-/*
-  Why this section exists:
-  Shield AI, Skydio and Anduril all clearly show *who* their products serve
-  and *what problem* they solve. Without use-cases, visitors don't know if
-  SHARK'D solves their problem and leave. This section is the conversion hook.
-*/
-
 const USE_CASES = [
   {
     id: "01",
@@ -32,8 +25,8 @@ const USE_CASES = [
 
 export default function MissionBrief() {
   return (
-    <section className="bg-slate-950 py-32 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-950 py-32 border-t border-slate-800 w-full">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}

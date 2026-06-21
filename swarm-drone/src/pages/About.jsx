@@ -1,25 +1,6 @@
 import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 
-/*
-  IMAGE SPECS FOR ABOUT PAGE
-  ─────────────────────────────────────────────────────
-  Hero banner (top of page)
-    File     : /public/images/about-hero.jpg
-    Size     : 1920 × 640 px
-    Content  : Aerial landscape shot at dusk/dawn, OR
-               close-up of drone hardware on a workbench.
-               High-contrast, cinematic.
-    Placement: Full-width behind the page header, h-[400px],
-               dark overlay so text stays legible.
-
-  Team member portraits (if real photos available)
-    File     : /public/team/[name].jpg
-    Size     : 400 × 400 px (square, cropped to face)
-    Style    : Neutral dark background, professional
-  ─────────────────────────────────────────────────────
-*/
-
 const ROADMAP = [
   {
     phase: "Phase 1",
@@ -80,13 +61,12 @@ const statusLabel = { complete: "Complete", active: "In Progress", upcoming: "Up
 export default function AboutPage() {
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white">
+      <div className="min-h-screen bg-slate-950 text-white w-full">
 
         {/* ── Page hero ── */}
-        <div className="relative pt-40 pb-24 border-b border-slate-800">
-          {/* Swap this for a full-bleed <img> when asset is ready */}
+        <div className="relative pt-40 pb-24 border-b border-slate-800 w-full">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-950 opacity-60" />
-          <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -106,7 +86,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-24 space-y-28">
+        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 py-24 space-y-28">
 
           {/* ── Mission & Vision ── */}
           <motion.div
@@ -157,36 +137,6 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* ── Team placeholder ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-blue-400 text-xs uppercase tracking-[5px] mb-4">Team</p>
-            <h2 className="text-3xl font-black mb-4">The People Behind SHARK'D</h2>
-            <p className="text-slate-400 text-sm mb-10 max-w-xl">
-              A team of engineers and researchers working at the intersection of
-              autonomous systems, robotics, and AI.
-            </p>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-              {["Founder / Systems Lead", "Software Engineer", "Aerospace Engineer"].map((role) => (
-                <div key={role} className="border border-slate-800 p-6 hover:border-slate-700 transition-colors duration-200">
-                  {/*
-                    Replace the avatar div below with:
-                    <img src="/team/[name].jpg" alt="[Name]"
-                         className="w-16 h-16 object-cover rounded-none mb-4 grayscale" />
-                  */}
-                  <div className="w-16 h-16 bg-slate-800 mb-4 flex items-center justify-center text-slate-600 text-xs font-mono">
-                    Photo
-                  </div>
-                  <p className="text-white font-semibold text-sm">Team Member</p>
-                  <p className="text-slate-500 text-xs mt-1 uppercase tracking-wide">{role}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* ── Roadmap ── */}
           <motion.div
@@ -199,18 +149,15 @@ export default function AboutPage() {
             <h2 className="text-3xl font-black mb-12">Development Timeline</h2>
 
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-[72px] top-0 bottom-0 w-px bg-slate-800" />
 
               <div className="space-y-10">
                 {ROADMAP.map((item) => (
                   <div key={item.phase} className="relative flex gap-8">
-                    {/* Phase label */}
                     <div className="shrink-0 w-[72px] text-right">
                       <p className="text-slate-600 text-xs font-mono">{item.period}</p>
                     </div>
 
-                    {/* Dot */}
                     <div className="relative flex items-start">
                       <div
                         className={`mt-1 w-3 h-3 border-2 rounded-full shrink-0 z-10 ${
@@ -223,7 +170,6 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    {/* Content */}
                     <div className="pb-8">
                       <div className="flex items-center gap-3 mb-2">
                         <p className="text-white font-bold">{item.title}</p>

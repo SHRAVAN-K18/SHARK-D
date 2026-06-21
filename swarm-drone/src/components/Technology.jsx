@@ -1,37 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-/*
-  IMAGE SPECS FOR THIS COMPONENT
-  ─────────────────────────────────────────────────────
-  Swarm communication diagram
-    File     : /public/images/tech-comms.jpg
-    Size     : 1200 × 800 px
-    Content  : Abstract mesh network diagram — multiple
-               drone nodes (dots) connected by glowing
-               blue lines, on a near-black background.
-               Like a network topology map but aerial.
-    Usage    : Fills the image cell in Section 1
-
-  Adaptive Decision Engine visualization
-    File     : /public/images/tech-ai.jpg
-    Size     : 1200 × 800 px
-    Content  : Neural network / decision tree visualization
-               rendered in dark mode. Blue/white nodes and
-               weighted edges. Could be a real model graph
-               or a stylised diagram.
-    Usage    : Fills the image cell in Section 2
-
-  Mission Planning UI
-    File     : /public/images/tech-mission.jpg
-    Size     : 1200 × 800 px
-    Content  : Overhead satellite/terrain map with waypoint
-               paths, zone overlays, and a drone formation
-               marker cluster. Dark basemap preferred.
-    Usage    : Fills the image cell in Section 3
-  ─────────────────────────────────────────────────────
-*/
-
 const LAYERS = [
   {
     id: "01",
@@ -63,8 +32,8 @@ export default function Technology() {
   const [activeLayer, setActiveLayer] = useState(null);
 
   return (
-    <section className="bg-slate-900 py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-900 py-32 w-full">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Section header */}
         <motion.div
@@ -130,7 +99,6 @@ export default function Technology() {
               >
                 {/* Image cell */}
                 <div className="relative bg-slate-800 border border-slate-700 h-[320px] flex items-center justify-center overflow-hidden">
-                  {/* Replace with: <img src={imgSrc} alt={layer.title} className="w-full h-full object-cover" /> */}
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900" />
                   <span className="relative text-slate-600 text-sm font-mono">{layer.imgPlaceholder}</span>
                   <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
@@ -144,7 +112,6 @@ export default function Technology() {
                   <h3 className="text-3xl font-black text-white">{layer.title}</h3>
                   <p className="text-slate-400 mt-5 text-base leading-relaxed">{layer.body}</p>
 
-                  {/* Capability chips */}
                   <div className="mt-8 flex flex-wrap gap-2">
                     {layer.chips.map((chip) => (
                       <span
@@ -161,7 +128,7 @@ export default function Technology() {
           })}
         </div>
 
-        {/* Stack diagram — visual tech stack summary */}
+        {/* Stack diagram */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

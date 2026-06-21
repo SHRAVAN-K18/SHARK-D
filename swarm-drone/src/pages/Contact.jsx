@@ -3,14 +3,6 @@ import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 
-/*
-  EmailJS credentials should be moved to .env:
-    VITE_EMAILJS_SERVICE  = service_h6l63ro
-    VITE_EMAILJS_TEMPLATE = template_jpm1u7p
-    VITE_EMAILJS_KEY      = hGTiiBLKecDtwluwh
-  Then reference via import.meta.env.VITE_EMAILJS_*
-*/
-
 const INQUIRY_TYPES = [
   "Research Collaboration",
   "System Integration",
@@ -68,7 +60,7 @@ export default function ContactPage() {
 
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white">
+      <div className="min-h-screen bg-slate-950 text-white w-full">
 
         {/* Notification */}
         <AnimatePresence>
@@ -89,29 +81,30 @@ export default function ContactPage() {
         </AnimatePresence>
 
         {/* Page header */}
-        <div className="pt-40 pb-16 border-b border-slate-800 max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-blue-400 text-xs uppercase tracking-[6px] mb-5">Contact</p>
-            <h1 className="text-5xl lg:text-6xl font-black max-w-2xl leading-tight">
-              Let's Talk Missions
-            </h1>
-            <p className="text-slate-400 text-lg mt-5 max-w-xl leading-relaxed">
-              Whether you're a researcher, integrator, or operator — we want to
-              hear about your mission.
-            </p>
-          </motion.div>
+        <div className="pt-40 pb-16 border-b border-slate-800 w-full">
+          <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-blue-400 text-xs uppercase tracking-[6px] mb-5">Contact</p>
+              <h1 className="text-5xl lg:text-6xl font-black max-w-2xl leading-tight">
+                Let's Talk Missions
+              </h1>
+              <p className="text-slate-400 text-lg mt-5 max-w-xl leading-relaxed">
+                Whether you're a researcher, integrator, or operator — we want to
+                hear about your mission.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
 
             {/* ── Left panel ── */}
             <div>
-              {/* Engagement paths */}
               <div className="space-y-0 border border-slate-800 mb-10">
                 {ENGAGEMENT_PATHS.map((ep, i) => (
                   <div
@@ -124,7 +117,6 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Direct contact */}
               <div className="space-y-4">
                 <div>
                   <p className="text-blue-400 text-xs uppercase tracking-widest mb-1">Email</p>
@@ -147,12 +139,11 @@ export default function ContactPage() {
             </div>
 
             {/* ── Contact form ── */}
-            <div className="border border-slate-800 p-10">
+            <div className="border border-slate-800 p-6 sm:p-10">
               <h2 className="text-2xl font-black mb-8">Send a Message</h2>
 
               <form ref={form} onSubmit={sendEmail} className="space-y-5">
 
-                {/* Inquiry type selector */}
                 <div>
                   <label className="block text-slate-400 text-xs uppercase tracking-widest mb-3">
                     Inquiry Type
@@ -173,7 +164,6 @@ export default function ContactPage() {
                       </button>
                     ))}
                   </div>
-                  {/* Hidden field to include inquiry type in email */}
                   <input type="hidden" name="inquiry_type" value={inquiryType} />
                 </div>
 

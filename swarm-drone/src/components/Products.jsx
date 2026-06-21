@@ -1,44 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-/*
-  IMAGE SPECS FOR THIS COMPONENT
-  ─────────────────────────────────────────────────────
-  Product 1 — Recon Drone render
-    File     : /public/images/recon-drone.jpg
-    Size     : 1200 × 800 px minimum
-    Content  : Clean 3/4-view render of a fixed-wing or
-               hybrid VTOL drone on a black/dark bg.
-               Studio lighting, no background clutter.
-    Usage    : Fills the left image cell (h-[420px])
-
-  Product 2 — Swarm Control System dashboard
-    File     : /public/images/swarm-control.jpg
-    Size     : 1200 × 800 px minimum
-    Content  : Dark UI screenshot showing a 2D/3D map with
-               multiple drone icons in formation, telemetry
-               panels, mission timeline.
-    Usage    : Fills the right image cell (h-[420px])
-
-  Product 3 — Mission Intelligence system diagram
-    File     : /public/images/mission-intel.jpg
-    Size     : 1200 × 800 px minimum
-    Content  : Abstract network graph / AI decision tree on
-               a dark background with blue node highlights.
-    Usage    : Fills the left image cell (h-[420px])
-  ─────────────────────────────────────────────────────
-*/
-
 const PRODUCTS = [
   {
     id: "SD-R1",
+    
     category: "UAV Platform",
     status: "In Development",
     name: "SHARK'D Recon-1",
     tagline: "Long-endurance autonomous reconnaissance platform",
     description:
       "The Recon-1 is a hybrid VTOL drone designed for extended-range surveillance and autonomous mission execution. Operates independently or as a coordinated swarm node, sharing telemetry and objective data with every other unit in real time.",
-    specs: [
+    image:"/product-recon.jpg",
+      specs: [
       { label: "Range", value: "40 km" },
       { label: "Endurance", value: "90 min" },
       { label: "Max Altitude", value: "3,000 m" },
@@ -57,7 +31,8 @@ const PRODUCTS = [
     tagline: "Unified intelligence layer for multi-drone operations",
     description:
       "The SCS is the software backbone of every SHARK'D deployment. It handles mission planning, real-time swarm orchestration, anomaly detection and deconfliction across fleets of 100+ drones from a single operator station.",
-    specs: [
+    image:"/product-swarm.jpg",
+      specs: [
       { label: "Fleet Size", value: "100+ drones" },
       { label: "Latency", value: "< 200 ms" },
       { label: "Interfaces", value: "Web / Desktop" },
@@ -76,7 +51,8 @@ const PRODUCTS = [
     tagline: "Adaptive AI decision-making for autonomous operations",
     description:
       "The MI Engine runs onboard each drone and enables decentralised reasoning. It processes sensor fusion data, reallocates tasks when nodes drop out, and maintains mission continuity without requiring a live uplink.",
-    specs: [
+    image:"/product-recon.jpg",
+      specs: [
       { label: "Inference", value: "Onboard edge AI" },
       { label: "Sensor Fusion", value: "Camera / LiDAR / IMU" },
       { label: "Replan Time", value: "< 50 ms" },
@@ -97,8 +73,8 @@ const statusColor = {
 
 export default function Products() {
   return (
-    <section className="bg-slate-950 py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-950 py-32 w-full">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Section header */}
         <motion.div
@@ -122,7 +98,7 @@ export default function Products() {
 
         {/* Product rows */}
         <div className="mt-24 space-y-28">
-          {PRODUCTS.map((p, i) => {
+          {PRODUCTS.map((p) => {
             const imgLeft = p.imageSide === "left";
             return (
               <motion.div
@@ -137,21 +113,16 @@ export default function Products() {
               >
                 {/* Image cell */}
                 <div className="relative bg-slate-900 border border-slate-800 h-[380px] flex items-center justify-center overflow-hidden group">
-                  {/*
-                    Replace the placeholder div below with:
-                    <img src={`/images/${p.imgKey}.jpg`} alt={p.name}
-                         className="w-full h-full object-cover" />
-                  */}
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800" />
-                  <span className="relative text-slate-600 text-sm font-mono">
-                    {p.imgPlaceholder}
-                  </span>
-                  {/* Corner accents — aerospace technical drawing feel */}
+<img
+  src={p.image}
+  alt={p.name}
+  className="relative w-full h-full object-cover"
+/>
                   <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
                   <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-slate-700" />
                   <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-slate-700" />
                   <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-700" />
-                  {/* Product ID watermark */}
                   <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-slate-800 text-xs font-mono tracking-widest">
                     {p.id}
                   </span>

@@ -21,7 +21,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMenuOpen(false), [location.pathname]);
 
@@ -35,7 +34,7 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="shrink-0 flex items-center">
@@ -109,7 +108,7 @@ export default function Navbar() {
             transition={{ duration: 0.22 }}
             className="md:hidden overflow-hidden bg-slate-950 border-t border-slate-800"
           >
-            <div className="px-6 py-6 flex flex-col gap-5">
+            <div className="px-4 sm:px-6 py-6 flex flex-col gap-5">
               {NAV_LINKS.map(({ path, label }) => (
                 <Link
                   key={path}
