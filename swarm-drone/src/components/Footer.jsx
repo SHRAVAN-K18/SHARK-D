@@ -21,7 +21,7 @@ const LINKS = {
 export default function Footer() {
   return (
     <footer className="bg-black border-t border-slate-800 w-full">
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 pb-8">
+      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 pb-8">
 
         {/* Top row */}
         <div className="grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-slate-900">
@@ -39,7 +39,7 @@ export default function Footer() {
               Scalable Hybrid Autonomous Reconnaissance &amp; Kinematic Drones.
               Advancing swarm intelligence for the missions that matter.
             </p>
-            <p className="text-slate-600 text-xs mt-4">Bengaluru, India</p>
+            <p className="text-slate-500 text-xs mt-4">Bengaluru, India</p>
             <a
               href="mailto:sharkd5051@gmail.com"
               className="text-blue-500 text-xs mt-1 block hover:text-blue-400 transition-colors"
@@ -72,10 +72,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-700 text-xs">
+          <p className="text-slate-500 text-xs">
             © 2026 SHARK'D. All rights reserved.
           </p>
-          <p className="text-slate-800 text-xs text-center">
+          <p className="text-slate-500 text-xs text-center">
             SHARK'D is a research and development initiative. Product specifications subject to change.
           </p>
         </div>

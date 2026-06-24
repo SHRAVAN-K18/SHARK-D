@@ -36,7 +36,7 @@ export default function Technology() {
 
   return (
     <section className="bg-slate-900 py-32 w-full">
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Section header */}
         <motion.div
@@ -100,20 +100,31 @@ export default function Technology() {
                   !imgLeft ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >
-                {/* Image cell */}
-<div className="relative bg-slate-800 border border-slate-700 h-[400px] overflow-hidden">
+               {/* Image cell */}
+<div
+  className={`relative bg-slate-800 border border-transparent overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60 ${
+    layer.id === "02" ? "h-[500px]" : "h-[400px]"       
+  }`}
+>
+
   <img
     src={layer.image}
     alt={layer.title}
-    className="w-full h-full object-cover"
+    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
   />
 
-  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-300" />
-  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-300" />
 
-  <span className="absolute top-4 right-4 text-white text-xs font-mono">
+
+  {/* Corner brackets */}
+  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+
+  <span className="absolute top-4 right-4 text-white text-xs font-mono z-10">
     {layer.id}
   </span>
+
 </div>
 
                 {/* Text cell */}

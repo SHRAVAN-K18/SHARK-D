@@ -65,7 +65,7 @@ export default function Hero() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-40 pb-38">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-0 sm:px-2 lg:px-2 pt-40 pb-38">
 
         {/* Eyebrow */}
         <motion.div
@@ -149,7 +149,7 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.8 }}
         className="relative z-10 w-full border-t border-slate-800 bg-slate-950/95 backdrop-blur-sm"
       >
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
           {STATS.map((s) => (
             <div key={s.label} className="py-12 px-4 sm:px-8 first:pl-0 last:pr-0">
               <p className="text-2xl font-black text-white">{s.value}</p>

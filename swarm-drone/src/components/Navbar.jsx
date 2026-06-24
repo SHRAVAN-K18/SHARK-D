@@ -34,7 +34,7 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="shrink-0 flex items-center">

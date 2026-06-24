@@ -74,7 +74,7 @@ const statusColor = {
 export default function Products() {
   return (
     <section className="bg-slate-950 py-32 w-full">
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Section header */}
         <motion.div
@@ -111,22 +111,32 @@ export default function Products() {
                   !imgLeft ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >
-                {/* Image cell */}
-                <div className="relative bg-slate-900 border border-slate-800 h-[380px] flex items-center justify-center overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800" />
-<img
-  src={p.image}
-  alt={p.name}
-  className="relative w-full h-full object-cover"
-/>
-                  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
-                  <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-slate-700" />
-                  <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-slate-700" />
-                  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-700" />
-                  <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-slate-800 text-xs font-mono tracking-widest">
-                    {p.id}
-                  </span>
-                </div>
+{/* Image cell */}
+<div className="relative bg-slate-900 border border-transparent h-[380px] flex items-center justify-center overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60">
+
+  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800" />
+
+  <img
+    src={p.image}
+    alt={p.name}
+    className="relative w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+  />
+
+
+
+
+
+  {/* Corner brackets */}
+  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+
+  <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-xs font-mono tracking-widest z-10">
+    {p.id}
+  </span>
+
+</div>
 
                 {/* Text cell */}
                 <div>

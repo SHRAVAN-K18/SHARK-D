@@ -26,7 +26,7 @@ const USE_CASES = [
 export default function MissionBrief() {
   return (
     <section className="bg-slate-950 py-32 border-t border-slate-800 w-full">
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}

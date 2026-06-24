@@ -1,17 +1,38 @@
 import { motion } from "framer-motion";
 
 const ITEMS = [
-  { label: "Airframe Design", sub: "CAD Render · Rev 3", large: true },
-  { label: "Swarm Simulation", sub: "Formation flight · 24 nodes" },
-  { label: "Flight Test", sub: "Field trial · Phase 2" },
-  { label: "Mission Planning", sub: "Ground control interface" },
-  { label: "Ground Station", sub: "Portable command unit" },
+  {
+    label: "Airframe Design",
+    sub: "CAD Render · Rev 3",
+    image: "/gallery-windtunnel.jpg",
+    large: true,
+  },
+  {
+    label: "Swarm Formation",
+    sub: "Formation flight · 24 nodes",
+    image: "/gallery-formation.jpg",
+  },
+  {
+    label: "Modular Payload",
+    sub: "Field trial · Phase 2",
+    image: "/gallery-payload.jpg",
+  },
+  {
+    label: "Mission Planning",
+    sub: "Ground control interface",
+    image: "/gallery-ui.jpg",
+  },
+  {
+    label: "Ground Station",
+    sub: "Portable command unit",
+    image: "/gallery-ground.jpg",
+  },
 ];
 
 export default function Gallery() {
   return (
     <section className="bg-slate-950 py-32 border-t border-slate-800 w-full">
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Header */}
         <motion.div
@@ -31,7 +52,7 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        {/* Grid */}
+{/* Grid */}
         <div className="grid md:grid-cols-3 gap-3">
 
           {/* Large cell — spans 2 rows */}
@@ -40,18 +61,26 @@ export default function Gallery() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="md:row-span-2 relative bg-slate-900 border border-slate-800 h-[420px] md:h-auto group overflow-hidden cursor-pointer"
+            className="md:row-span-2 relative bg-slate-900 border border-transparent h-[500px] md:h-auto group overflow-hidden cursor-pointer transition-all duration-300 hover:border-cyan-400/60"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 group-hover:from-slate-800 transition-colors duration-300" />
-            <span className="absolute inset-0 flex items-center justify-center text-slate-700 text-sm font-mono">
-              CAD Render · large cell
-            </span>
+            <img
+  src={ITEMS[0].image}
+  alt={ITEMS[0].label}
+  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+/>
+
+<div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
             <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
               <p className="text-white text-sm font-semibold">{ITEMS[0].label}</p>
               <p className="text-slate-400 text-xs mt-0.5">{ITEMS[0].sub}</p>
             </div>
             <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
             <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-slate-700" />
+            {/* Cyan hover corners */}
+<span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+<span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+<span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+<span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
           </motion.div>
 
           {/* Right column cells */}
@@ -62,12 +91,20 @@ export default function Gallery() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="relative bg-slate-900 border border-slate-800 h-[200px] group overflow-hidden cursor-pointer"
+              className="relative bg-slate-900 border border-transparent h-[260px] group overflow-hidden cursor-pointer transition-all duration-300 hover:border-cyan-400/60"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 group-hover:from-slate-800 transition-colors duration-300" />
-              <span className="absolute inset-0 flex items-center justify-center text-slate-700 text-xs font-mono">
-                {item.label}
-              </span>
+<img
+  src={item.image}
+  alt={item.label}
+  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+/>
+
+<>
+  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+</>
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
                 <p className="text-white text-sm font-semibold">{item.label}</p>
                 <p className="text-slate-400 text-xs mt-0.5">{item.sub}</p>

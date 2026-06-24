@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const LAYERS = [
   {
     id: "01",
+    image: "/tech-mesh.jpg",
     tag: "Coordination",
     title: "Swarm Communication",
     body: "Every drone in a SHARK'D swarm runs a lightweight mesh stack that continuously broadcasts and receives position, health, and mission data. The topology is fully decentralised — there is no single point of failure. When a node drops, the remaining units re-elect a swarm lead and redistribute incomplete objectives within 200 ms.",
@@ -21,6 +22,7 @@ const LAYERS = [
   },
   {
     id: "02",
+    image: "/tech-adaptive.png",
     tag: "Intelligence",
     title: "Adaptive Decision Engine",
     body: "Each drone runs a quantised neural model onboard that interprets sensor fusion data and drives real-time replanning. No ground uplink is required for mission execution. The model is < 8 MB, runs at < 2 W, and produces a replan output in under 50 ms — fast enough to maintain formation geometry in dynamic wind conditions.",
@@ -36,6 +38,7 @@ const LAYERS = [
   },
   {
     id: "03",
+    image: "/tech-mission.jpg",
     tag: "Autonomy",
     title: "Mission Planning",
     body: "Operators define a mission goal — area coverage, perimeter patrol, point tracking — and the Swarm Control System automatically assigns roles across the fleet. Drones self-deconflict flight paths, share detections in real time, and maintain geometric formation through turbulence and node loss.",
@@ -137,13 +140,26 @@ export default function TechnologyPage() {
                 }`}
               >
                 {/* Image */}
-                <div className="relative bg-slate-900 border border-slate-800 h-[340px] flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800" />
-                  <span className="relative text-slate-600 text-sm font-mono text-center px-6">{layer.imgPlaceholder}</span>
-                  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
-                  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-700" />
-                  <span className="absolute top-4 right-4 text-slate-700 text-xs font-mono">{layer.id}</span>
-                </div>
+<div className="relative bg-slate-900 border border-transparent h-[340px] overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60">
+
+  <img
+    src={layer.image}
+    alt={layer.title}
+    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+  />
+
+  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
+
+  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+
+  <span className="absolute top-4 right-4 text-white text-xs font-mono z-10">
+    {layer.id}
+  </span>
+
+</div>
 
                 {/* Content */}
                 <div>

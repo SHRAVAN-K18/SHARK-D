@@ -10,6 +10,7 @@ const PRODUCTS = [
     statusColor: "border-blue-500 text-blue-400",
     name: "SHARK'D Recon-1",
     tagline: "Long-endurance autonomous reconnaissance UAV",
+    image: "/product-recon.jpg",
     description:
       "The Recon-1 is SHARK'D's primary airframe — a hybrid VTOL platform designed for persistent area surveillance, perimeter patrol, and intelligence gathering. It operates as a standalone unit or as a coordinated node within a larger swarm, continuously sharing telemetry, detections, and mission state with every other unit.",
     specs: [
@@ -37,6 +38,7 @@ const PRODUCTS = [
     statusColor: "border-green-500 text-green-400",
     name: "Swarm Control System",
     tagline: "Unified software for multi-drone mission management",
+    image: "/product-swarm.jpg",
     description:
       "The Swarm Control System is the operator interface and intelligence backbone of every SHARK'D deployment. It handles mission planning, real-time fleet orchestration, anomaly triage, and deconfliction for up to 100+ drones simultaneously, from a browser or desktop application.",
     specs: [
@@ -64,6 +66,7 @@ const PRODUCTS = [
     statusColor: "border-amber-500 text-amber-400",
     name: "Mission Intelligence Engine",
     tagline: "Onboard edge AI for decentralised autonomous decision-making",
+    image: "/product-intelligence.jpg",
     description:
       "The MI Engine runs on each drone and enables fully decentralised reasoning. It processes sensor fusion data in real time, replans when objectives change or nodes fail, and maintains mission continuity without a live uplink — critical for GPS-denied and comms-degraded environments.",
     specs: [
@@ -132,12 +135,22 @@ export default function ProductsPage() {
               <div className="grid lg:grid-cols-2 gap-14 items-start">
                 {/* Left: image + description */}
                 <div>
-                  <div className="relative bg-slate-900 border border-slate-800 h-[360px] flex items-center justify-center mb-8 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800" />
-                    <span className="relative text-slate-600 text-sm font-mono text-center px-6">{p.imgPlaceholder}</span>
-                    <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-slate-700" />
-                    <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-slate-700" />
-                  </div>
+<div className="relative bg-slate-900 border border-transparent h-[360px] mb-8 overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60">
+
+  <img
+    src={p.image}
+    alt={p.name}
+    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+  />
+
+  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
+
+  <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+  <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+
+</div>
 
                   <h2 className="text-3xl font-black text-white">{p.name}</h2>
                   <p className="text-slate-400 text-sm mt-1 mb-4">{p.tagline}</p>
