@@ -10,10 +10,10 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-slate-950 w-full">
+    <section className="relative h-screen max-h-screen flex flex-col justify-center bg-slate-950 w-full">
 
       {/* ── Background ── */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
 
         {/* Video */}
         <video
@@ -26,11 +26,8 @@ export default function Hero() {
           <source src="/hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Dark overlay — keeps text readable */}
         <div className="absolute inset-0 bg-slate-950/10" />
 
-        {/* Watermark remover — solid-to-transparent gradient patch over bottom-right */}
-        {/* Increase width/height below if your watermark is bigger */}
         <div
           className="absolute bottom-0 right-0 pointer-events-none z-10"
           style={{
@@ -40,7 +37,6 @@ export default function Hero() {
           }}
         />
 
-        {/* Subtle grid */}
         <svg
           className="absolute inset-0 w-full h-full opacity-[0.04]"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,21 +49,19 @@ export default function Hero() {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
 
-        {/* Scan-line shimmer */}
         <motion.div
           animate={{ x: ["0%", "100%"] }}
           transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
           className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-transparent via-blue-400/20 to-transparent"
         />
 
-        {/* Bottom glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 rounded-full blur-[120px]" />
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-0 sm:px-2 lg:px-2 pt-40 pb-38">
+      {/* FIX: px-5 on mobile, proper pt/pb, removed invalid pb-38 */}
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-5 sm:px-6 lg:px-10 pt-32 sm:pt-40 pb-10 flex-1 flex flex-col justify-center">
 
-        {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,12 +74,12 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* FIX: text-4xl on mobile instead of text-5xl */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-[80px] font-black text-white leading-[1.05] tracking-tight max-w-4xl"
+          className="text-4xl sm:text-6xl lg:text-[80px] font-black text-white leading-[1.05] tracking-tight max-w-4xl"
         >
           Swarms That{" "}
           <span className="text-blue-400">Think.</span>
@@ -94,7 +88,6 @@ export default function Hero() {
           <span className="text-blue-400">Win.</span>
         </motion.h1>
 
-        {/* Sub-headline */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -106,7 +99,6 @@ export default function Hero() {
           coordinated aerial operations at unprecedented scale.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,12 +117,11 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Scroll cue */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="mt-16 flex items-center gap-2 text-slate-500 text-xs uppercase tracking-widest"
+          className="mt-10 flex items-center gap-2 text-slate-500 text-xs uppercase tracking-widest"
         >
           <motion.span
             animate={{ y: [0, 6, 0] }}
@@ -143,6 +134,7 @@ export default function Hero() {
       </div>
 
       {/* ── Metrics strip ── */}
+      {/* FIX: py-6 on mobile instead of py-12 */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -151,7 +143,7 @@ export default function Hero() {
       >
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
           {STATS.map((s) => (
-            <div key={s.label} className="py-12 px-4 sm:px-8 first:pl-0 last:pr-0">
+            <div key={s.label} className="py-6 sm:py-12 px-4 sm:px-8 first:pl-0 last:pr-0">
               <p className="text-2xl font-black text-white">{s.value}</p>
               <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">{s.label}</p>
             </div>
