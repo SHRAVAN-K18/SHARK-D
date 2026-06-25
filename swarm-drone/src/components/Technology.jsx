@@ -35,7 +35,7 @@ export default function Technology() {
   const [activeLayer, setActiveLayer] = useState(null);
 
   return (
-    <section className="bg-slate-900 py-32 w-full">
+    <section className="bg-slate-1000 pt-1 pb-32 w-full">
       <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Section header */}

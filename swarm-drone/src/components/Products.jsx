@@ -213,7 +213,10 @@ export default function Products() {
               Get in Touch
             </button>
           </Link>
+          
         </motion.div>
+        <div className="mt-24 border-t border-slate-800 pt-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"></div>
+        
 
       </div>
     </section>

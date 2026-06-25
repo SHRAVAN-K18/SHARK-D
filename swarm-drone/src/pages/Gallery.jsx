@@ -2,13 +2,42 @@ import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 
 const ITEMS = [
-  { label: "Airframe Design",      sub: "CAD Render · Rev 3",              large: true,  placeholder: "Full drone CAD render · large cell" },
-  { label: "Swarm Simulation",     sub: "Formation flight · 24 nodes",     large: false, placeholder: "Simulation overhead view" },
-  { label: "Flight Test",          sub: "Field trial · Phase 2",           large: false, placeholder: "Drone in flight photo" },
-  { label: "Mission Planning UI",  sub: "Ground control interface",        large: false, placeholder: "GCS map screenshot" },
-  { label: "Ground Station",       sub: "Portable command unit",           large: false, placeholder: "Field command post photo" },
-  { label: "Electronics",          sub: "Flight controller assembly",      large: false, placeholder: "PCB / electronics close-up" },
-  { label: "Physical Prototype",   sub: "Airframe Rev 2 · Bengaluru Lab",  large: false, placeholder: "Prototype airframe photo" },
+  {
+    label: "Airframe Design",
+    sub: "CAD Render · Rev 3",
+    image: "/gallery-windtunnel.jpg",
+    large: true,
+  },
+  {
+    label: "Swarm Simulation",
+    sub: "Formation flight · 24 nodes",
+    image: "/gallery-formation.jpg",
+  },
+  {
+    label: "Flight Test",
+    sub: "Field trial · Phase 2",
+    image: "/gallery-flight.jpg",
+  },
+  {
+    label: "Mission Planning UI",
+    sub: "Ground control interface",
+    image: "/gallery-ui.jpg",
+  },
+  {
+    label: "Ground Station",
+    sub: "Portable command unit",
+    image: "/gallery-ground.jpg",
+  },
+  {
+    label: "Electronics",
+    sub: "Flight controller assembly",
+    image: "/gallery-electronics.jpg",
+  },
+  {
+    label: "Physical Prototype",
+    sub: "Airframe Rev 2 · Bengaluru Lab",
+    image: "/gallery-prototype.jpg",
+  },
 ];
 
 const FILTERS = ["All", "Hardware", "Software", "Field Tests"];
@@ -57,7 +86,7 @@ export default function GalleryPage() {
         {/* Grid */}
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-16">
 
-          <div className="grid md:grid-cols-3 gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {/* Large cell — top-left, spans 2 rows */}
             <motion.div
@@ -65,12 +94,15 @@ export default function GalleryPage() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="md:row-span-2 relative bg-slate-900 border border-slate-800 min-h-[420px] md:min-h-0 group overflow-hidden cursor-pointer"
+             className="relative bg-slate-900 border border-slate-800 h-[500px] group overflow-hidden cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:from-slate-700 transition-colors duration-300" />
-              <span className="absolute inset-0 flex items-center justify-center text-slate-600 text-sm font-mono px-6 text-center">
-                {ITEMS[0].placeholder}
-              </span>
+         <img
+  src={ITEMS[0].image}
+  alt={ITEMS[0].label}
+  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+/>
+
+<div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
               <div className="absolute inset-0 border border-blue-500/0 group-hover:border-blue-500/30 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-white text-sm font-semibold">{ITEMS[0].label}</p>
@@ -90,10 +122,13 @@ export default function GalleryPage() {
                 transition={{ duration: 0.35, delay: i * 0.06 }}
                 className="relative bg-slate-900 border border-slate-800 h-[200px] group overflow-hidden cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:from-slate-700 transition-colors duration-300" />
-                <span className="absolute inset-0 flex items-center justify-center text-slate-700 text-xs font-mono px-4 text-center">
-                  {item.placeholder}
-                </span>
+<img
+  src={item.image}
+  alt={item.label}
+  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+/>
+
+<div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
                 <div className="absolute inset-0 border border-blue-500/0 group-hover:border-blue-500/30 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-white text-sm font-semibold">{item.label}</p>
@@ -114,10 +149,13 @@ export default function GalleryPage() {
                 transition={{ duration: 0.35, delay: i * 0.08 }}
                 className="relative bg-slate-900 border border-slate-800 h-[220px] group overflow-hidden cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 group-hover:from-slate-700 transition-colors duration-300" />
-                <span className="absolute inset-0 flex items-center justify-center text-slate-700 text-xs font-mono px-4 text-center">
-                  {item.placeholder}
-                </span>
+<img
+  src={item.image}
+  alt={item.label}
+  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+/>
+
+<div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
                 <div className="absolute inset-0 border border-blue-500/0 group-hover:border-blue-500/30 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-white text-sm font-semibold">{item.label}</p>
