@@ -15,7 +15,7 @@ const ITEMS = [
   {
     label: "Modular Payload",
     sub: "Field trial · Phase 2",
-    image: "/gallery-payload.jpg",
+    image: "/gallery-payload.png",
   },
   {
     label: "Mission Planning",
