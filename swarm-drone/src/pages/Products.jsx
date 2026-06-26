@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 const PRODUCTS = [
   {
@@ -92,10 +93,11 @@ const PRODUCTS = [
 export default function ProductsPage() {
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white w-full">
+      <div className="min-h-screen bg-transparent text-white w-full">
 
         {/* Page header */}
-        <div className="pt-40 pb-20 border-b border-slate-800 w-full">
+        <div className="relative pt-40 pb-20 border-b border-slate-800 w-full overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={130} />
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -197,7 +199,8 @@ export default function ProductsPage() {
         </div>
 
         {/* CTA banner */}
-        <div className="border-t border-slate-800 bg-slate-900 w-full">
+        <div className="relative border-t border-slate-800 bg-slate-900 w-full overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={120} />
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-3xl font-black text-white">

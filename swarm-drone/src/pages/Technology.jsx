@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 const LAYERS = [
   {
@@ -78,10 +79,11 @@ export default function TechnologyPage() {
 
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white w-full">
+      <div className="min-h-screen bg-transparent text-white w-full">
 
         {/* Page header */}
-        <div className="pt-40 pb-20 border-b border-slate-800 w-full">
+        <div className="relative pt-40 pb-20 border-b border-slate-800 w-full overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={130} />
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -187,7 +189,8 @@ export default function TechnologyPage() {
         </div>
 
         {/* System Architecture block */}
-        <div className="border-t border-slate-800 bg-slate-900 w-full">
+        <div className="relative border-t border-slate-800 bg-slate-900 w-full overflow-hidden">
+          <AnimatedBackground density={0.00004} color="59,130,246" maxDist={110} />
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-20">
             <p className="text-blue-400 text-xs uppercase tracking-[5px] mb-4">System Architecture</p>
             <h2 className="text-3xl font-black mb-12">Layer Stack</h2>
@@ -232,7 +235,8 @@ export default function TechnologyPage() {
         </div>
 
         {/* CTA */}
-        <div className="border-t border-slate-800 bg-slate-900 w-full">
+        <div className="relative border-t border-slate-800 bg-slate-900 w-full overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={120} />
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <h2 className="text-2xl font-black text-white">Ready to see it in action?</h2>

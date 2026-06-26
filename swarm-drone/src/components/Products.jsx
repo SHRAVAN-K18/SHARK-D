@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import AnimatedBackground from "./AnimatedBackground";
 
 const PRODUCTS = [
   {
@@ -73,8 +74,9 @@ const statusColor = {
 
 export default function Products() {
   return (
-    <section className="bg-slate-950 py-32 w-full">
-      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
+    <section className="relative bg-slate-950 py-32 w-full overflow-hidden">
+      <AnimatedBackground density={0.00004} color="59,130,246" maxDist={120} />
+      <div className="relative z-10 w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Section header */}
         <motion.div
@@ -192,12 +194,14 @@ export default function Products() {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        <div className="relative mt-24 border-t border-slate-800 overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={110} />
+          <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-24 border-t border-slate-800 pt-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+          className="relative z-10 pt-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
         >
           <div>
             <p className="text-white font-bold text-xl">
@@ -215,6 +219,7 @@ export default function Products() {
           </Link>
           
         </motion.div>
+        </div>
         <div className="mt-24 border-t border-slate-800 pt-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"></div>
         
 

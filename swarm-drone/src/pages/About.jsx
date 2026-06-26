@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 const ROADMAP = [
   {
@@ -61,11 +62,12 @@ const statusLabel = { complete: "Complete", active: "In Progress", upcoming: "Up
 export default function AboutPage() {
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white w-full">
+      <div className="min-h-screen bg-transparent text-white w-full">
 
         {/* ── Page hero ── */}
-        <div className="relative pt-40 pb-24 border-b border-slate-800 w-full">
+        <div className="relative pt-40 pb-24 border-b border-slate-800/50 w-full">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-950 opacity-60" />
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={130} />
           <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -127,7 +129,8 @@ export default function AboutPage() {
           >
             <p className="text-blue-400 text-xs uppercase tracking-[5px] mb-4">Principles</p>
             <h2 className="text-3xl font-black mb-10">What We Build By</h2>
-            <div className="grid md:grid-cols-2 gap-px bg-slate-800 border border-slate-800">
+            <div className="grid md:grid-cols-2 gap-px bg-slate-800 border border-slate-800 relative overflow-hidden">
+              <AnimatedBackground density={0.00004} color="59,130,246" maxDist={100} />
               {VALUES.map((v) => (
                 <div key={v.label} className="bg-slate-950 p-8 hover:bg-slate-900 transition-colors duration-200">
                   <p className="text-white font-bold text-lg">{v.label}</p>
@@ -144,7 +147,10 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="relative overflow-hidden border border-slate-800/40 p-8 -mx-8"
           >
+            <AnimatedBackground density={0.00004} color="59,130,246" maxDist={120} />
+            <div className="relative z-10">
             <p className="text-blue-400 text-xs uppercase tracking-[5px] mb-4">Roadmap</p>
             <h2 className="text-3xl font-black mb-12">Development Timeline</h2>
 
@@ -190,6 +196,7 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
+            </div>
             </div>
           </motion.div>
 

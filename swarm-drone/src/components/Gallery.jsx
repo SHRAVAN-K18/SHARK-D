@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedBackground from "./AnimatedBackground";
 
 const ITEMS = [
   {
@@ -31,8 +32,9 @@ const ITEMS = [
 
 export default function Gallery() {
   return (
-    <section className="bg-slate-950 py-32 border-t border-slate-800 w-full">
-      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
+    <section className="relative bg-slate-950 py-32 border-t border-slate-800 w-full overflow-hidden">
+      <AnimatedBackground density={0.00004} color="59,130,246" maxDist={120} />
+      <div className="relative z-10 w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Header */}
         <motion.div

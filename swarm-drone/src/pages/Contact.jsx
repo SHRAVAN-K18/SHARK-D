@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 const INQUIRY_TYPES = [
   "Research Collaboration",
@@ -60,7 +61,7 @@ export default function ContactPage() {
 
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white w-full">
+      <div className="min-h-screen bg-transparent text-white w-full">
 
         {/* Notification */}
         <AnimatePresence>
@@ -81,7 +82,8 @@ export default function ContactPage() {
         </AnimatePresence>
 
         {/* Page header */}
-        <div className="pt-40 pb-16 border-b border-slate-800 w-full">
+        <div className="relative pt-40 pb-16 border-b border-slate-800 w-full overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={130} />
           <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -105,11 +107,12 @@ export default function ContactPage() {
 
             {/* ── Left panel ── */}
             <div>
-              <div className="space-y-0 border border-slate-800 mb-10">
+              <div className="relative space-y-0 border border-slate-800 mb-10 overflow-hidden">
+                <AnimatedBackground density={0.00006} color="59,130,246" maxDist={100} />
                 {ENGAGEMENT_PATHS.map((ep, i) => (
                   <div
                     key={ep.title}
-                    className={`p-6 ${i < ENGAGEMENT_PATHS.length - 1 ? "border-b border-slate-800" : ""}`}
+                    className={`relative z-10 p-6 ${i < ENGAGEMENT_PATHS.length - 1 ? "border-b border-slate-800" : ""}`}
                   >
                     <p className="text-white font-semibold text-sm">{ep.title}</p>
                     <p className="text-slate-500 text-sm mt-2 leading-relaxed">{ep.body}</p>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AnimatedBackground from "./AnimatedBackground";
 
 const LINKS = {
   Platform: [
@@ -20,8 +21,12 @@ const LINKS = {
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-slate-800 w-full">
-      <div className="w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 pb-8">
+    <footer className="relative bg-black border-t border-slate-800 w-full overflow-hidden">
+
+      {/* Particle network — full footer canvas */}
+      <AnimatedBackground density={0.00006} color="59,130,246" maxDist={160} />
+
+      <div className="relative z-10 w-full max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 pb-8">
 
         {/* Top row */}
         <div className="grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-slate-900">

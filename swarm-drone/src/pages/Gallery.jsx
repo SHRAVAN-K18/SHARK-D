@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 const ITEMS = [
   // Hardware × 3
@@ -91,10 +92,11 @@ export default function GalleryPage() {
 
   return (
     <PageWrapper>
-      <div className="min-h-screen bg-slate-950 text-white w-full">
+      <div className="min-h-screen bg-transparent text-white w-full">
 
         {/* Page header */}
-        <div className="pt-40 pb-20 border-b border-slate-800 w-full">
+        <div className="relative pt-40 pb-20 border-b border-slate-800 w-full overflow-hidden">
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={130} />
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}

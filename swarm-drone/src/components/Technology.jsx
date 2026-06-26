@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import AnimatedBackground from "./AnimatedBackground";
 
 const LAYERS = [
   {
@@ -155,8 +156,10 @@ export default function Technology() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="mt-28 border border-slate-800 p-10"
+          className="relative mt-28 border border-slate-800 p-10 overflow-hidden"
         >
+          <AnimatedBackground density={0.00005} color="59,130,246" maxDist={110} />
+          <div className="relative z-10">
           <p className="text-slate-500 text-xs uppercase tracking-[5px] mb-8">System Architecture</p>
           <div className="space-y-3">
             {[
@@ -172,6 +175,7 @@ export default function Technology() {
                 <p className="text-slate-400 text-sm">{row.desc}</p>
               </div>
             ))}
+          </div>
           </div>
         </motion.div>
 
