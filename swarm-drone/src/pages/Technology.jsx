@@ -147,7 +147,7 @@ export default function TechnologyPage() {
     layer.id === "01"
       ? "h-[517px]"
       : layer.id === "02"
-      ? "h-[514px]"
+      ? "h-[514px]" 
       : layer.id === "03"
       ? "h-[491px]"
       : "h-[340px]"
