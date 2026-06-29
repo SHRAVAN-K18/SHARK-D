@@ -142,7 +142,19 @@ export default function TechnologyPage() {
                 }`}
               >
                 {/* Image */}
-<div className="relative bg-slate-900 border border-transparent h-[340px] overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60">
+<div
+  className={`relative bg-slate-900 border border-transparent overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60 ${
+    layer.id === "01"
+      ? "h-[517px]"
+      : layer.id === "02"
+      ? "h-[514px]"
+      : layer.id === "03"
+      ? "h-[491px]"
+      : "h-[340px]"
+  }`}
+>
+
+  
 
   <img
     src={layer.image}
