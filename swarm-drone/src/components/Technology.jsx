@@ -104,7 +104,10 @@ export default function Technology() {
                {/* Image cell */}
 <div
   className={`relative bg-slate-800 border border-transparent overflow-hidden group cursor-pointer transition-all duration-300 hover:border-cyan-400/60 ${
-    layer.id === "02" ? "h-[500px]" : "h-[400px]"       
+    
+    layer.id === "01" ? "h-[500px]" : "h-[500px]" 
+    
+    
   }`}
 >
 
